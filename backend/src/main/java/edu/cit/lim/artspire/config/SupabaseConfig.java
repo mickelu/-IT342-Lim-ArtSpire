@@ -1,28 +1,22 @@
-package com.artspire.backend.config;
+package edu.cit.lim.artspire.config;
 
-import io.supabase.SupabaseClient;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class SupabaseConfig {
 
-    private static SupabaseConfig instance;
-    private SupabaseClient client;
+    @Value("${supabase.url}")
+    private String supabaseUrl;
 
-    private SupabaseConfig() {
-        // initialize your supabase client here
-        client = new SupabaseClient(
-                "https://mqyraqvcomlmvwfqqvbw.supabase.co",
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xeXJhcXZjb21sbXZ3ZnFxdmJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2ODMwOTgsImV4cCI6MjA5MDI1OTA5OH0.yL9ZLNVEE1qj-WuXALSNkijTh0SShjP8zz5tZ-l9h40"
-        );
+    @Value("${supabase.key}")
+    private String supabaseKey;
+
+    public String getSupabaseUrl() {
+        return supabaseUrl;
     }
 
-    public static SupabaseConfig getInstance() {
-        if (instance == null) {
-            instance = new SupabaseConfig();
-        }
-        return instance;
-    }
-
-    public SupabaseClient getClient() {
-        return client;
+    public String getSupabaseKey() {
+        return supabaseKey;
     }
 }

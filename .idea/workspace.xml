@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed489817-2fba-41d1-9a57-ab8b0894993c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="86" />
+    <option name="cachedIndexableFilesCount" value="89" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,10 +22,10 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3AbkxZ52pUFxK0Q9YR5rD9p4Z9Y" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,6 +46,11 @@
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Asus VivoBook/-IT342-Lim-ArtSpire",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -59,6 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1772868906635</updated>
       <workItem from="1775464574665" duration="147000" />
+      <workItem from="1775464746380" duration="1177000" />
     </task>
     <servers />
   </component>

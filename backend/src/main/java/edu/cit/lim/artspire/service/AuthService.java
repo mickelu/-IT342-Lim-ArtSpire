@@ -2,14 +2,14 @@ package edu.cit.lim.artspire.service;
 
 import edu.cit.lim.artspire.dto.LoginRequest;
 import edu.cit.lim.artspire.dto.RegisterRequest;
+import edu.cit.lim.artspire.factory.UserFactory;
 import edu.cit.lim.artspire.model.User;
 import edu.cit.lim.artspire.repository.UserRepository;
 
-import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -26,11 +26,11 @@ public class AuthService {
             return "Email already exists";
         }
 
-        User user = new User();
-        user.setName(request.getName());
-        user.setEmail(request.getEmail());
-        user.setPassword(encoder.encode(request.getPassword()));
-        user.setCreatedAt(LocalDateTime.now());
+        User user = UserFactory.createUser(
+                request.getName(),
+                request.getEmail(),
+                encoder.encode(request.getPassword())
+        );
 
         userRepository.save(user);
 

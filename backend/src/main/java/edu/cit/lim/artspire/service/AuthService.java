@@ -5,12 +5,12 @@ import edu.cit.lim.artspire.dto.RegisterRequest;
 import edu.cit.lim.artspire.factory.UserFactory;
 import edu.cit.lim.artspire.model.User;
 import edu.cit.lim.artspire.repository.UserRepository;
+import edu.cit.lim.artspire.strategy.LoginStrategy;
+import edu.cit.lim.artspire.strategy.EmailLoginStrategy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class AuthService {
@@ -38,17 +38,7 @@ public class AuthService {
     }
 
     public String login(LoginRequest request){
-
-        Optional<User> user = userRepository.findByEmail(request.getEmail());
-
-        if(user.isEmpty()){
-            return "Invalid credentials";
-        }
-
-        if(!encoder.matches(request.getPassword(), user.get().getPassword())){
-            return "Invalid credentials";
-        }
-
-        return "Login successful";
+        LoginStrategy strategy = new EmailLoginStrategy(userRepository, encoder);
+        return strategy.login(request);
     }
 }

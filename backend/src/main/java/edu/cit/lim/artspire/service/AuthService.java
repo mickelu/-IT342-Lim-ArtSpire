@@ -7,6 +7,8 @@ import edu.cit.lim.artspire.model.User;
 import edu.cit.lim.artspire.repository.UserRepository;
 import edu.cit.lim.artspire.strategy.LoginStrategy;
 import edu.cit.lim.artspire.strategy.EmailLoginStrategy;
+import edu.cit.lim.artspire.observer.UserObserver;
+import edu.cit.lim.artspire.observer.NotificationObserver;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,6 +21,9 @@ public class AuthService {
     private UserRepository userRepository;
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+    // Observer Pattern
+    private UserObserver observer = new NotificationObserver();
 
     public String register(RegisterRequest request){
 
@@ -33,6 +38,8 @@ public class AuthService {
         );
 
         userRepository.save(user);
+
+        observer.update(user);
 
         return "User registered successfully";
     }

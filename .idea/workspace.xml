@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed489817-2fba-41d1-9a57-ab8b0894993c" name="Changes" comment="" />
+    <list default="true" id="ed489817-2fba-41d1-9a57-ab8b0894993c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/service/AuthService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1772868906635</updated>
       <workItem from="1775464574665" duration="147000" />
-      <workItem from="1775464746380" duration="1832000" />
+      <workItem from="1775464746380" duration="2131000" />
     </task>
     <servers />
   </component>

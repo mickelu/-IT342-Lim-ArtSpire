@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
         body.put("success", false);
         body.put("message", exception.getReason());
 
-        return ResponseEntity.status(exception.getStatusCode()).body(body);
+        return ResponseEntity.status(exception.getStatus()).body(body);
     }
 
     @ExceptionHandler(Exception.class)

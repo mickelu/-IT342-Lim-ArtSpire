@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthLayout from "../components/AuthLayout";
-import { postJson } from "../supabaseClient";
 import { setStoredUser } from "../lib/storage";
 
 export default function Register() {
@@ -26,15 +25,30 @@ export default function Register() {
     setFeedback(null);
 
     try {
-      const data = await postJson("/api/auth/register", form);
+      const response = await fetch("http://localhost:8081/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Registration failed");
+      }
+
       setStoredUser({
         name: data.name || form.name,
         email: data.email || form.email
       });
+
       navigate("/dashboard", {
         replace: true,
-        state: { message: data.message }
+        state: { message: data.message || "Registration successful" }
       });
+
     } catch (error) {
       setFeedback({ type: "error", message: error.message });
     } finally {

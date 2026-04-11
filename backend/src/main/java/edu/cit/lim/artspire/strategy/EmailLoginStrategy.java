@@ -5,8 +5,11 @@ import edu.cit.lim.artspire.model.User;
 import edu.cit.lim.artspire.repository.UserRepository;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
+
+import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 public class EmailLoginStrategy implements LoginStrategy {
 
@@ -19,18 +22,18 @@ public class EmailLoginStrategy implements LoginStrategy {
     }
 
     @Override
-    public String login(LoginRequest request){
+    public User login(LoginRequest request){
 
         Optional<User> user = userRepository.findByEmail(request.getEmail());
 
         if(user.isEmpty()){
-            return "Invalid credentials";
+            throw new ResponseStatusException(UNAUTHORIZED, "Invalid credentials");
         }
 
         if(!encoder.matches(request.getPassword(), user.get().getPassword())){
-            return "Invalid credentials";
+            throw new ResponseStatusException(UNAUTHORIZED, "Invalid credentials");
         }
 
-        return "Login successful";
+        return user.get();
     }
 }

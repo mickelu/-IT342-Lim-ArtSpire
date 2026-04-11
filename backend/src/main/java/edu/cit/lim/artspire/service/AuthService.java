@@ -1,5 +1,6 @@
 package edu.cit.lim.artspire.service;
 
+import edu.cit.lim.artspire.dto.AuthResponse;
 import edu.cit.lim.artspire.dto.LoginRequest;
 import edu.cit.lim.artspire.dto.RegisterRequest;
 import edu.cit.lim.artspire.factory.UserFactory;
@@ -13,6 +14,12 @@ import edu.cit.lim.artspire.observer.NotificationObserver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.time.LocalDateTime;
+
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
+import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 @Service
 public class AuthService {
@@ -25,10 +32,10 @@ public class AuthService {
     // Observer Pattern
     private UserObserver observer = new NotificationObserver();
 
-    public String register(RegisterRequest request){
+    public AuthResponse register(RegisterRequest request){
 
         if(userRepository.findByEmail(request.getEmail()).isPresent()){
-            return "Email already exists";
+            throw new ResponseStatusException(BAD_REQUEST, "Email already exists");
         }
 
         User user = UserFactory.createUser(
@@ -36,16 +43,18 @@ public class AuthService {
                 request.getEmail(),
                 encoder.encode(request.getPassword())
         );
+        user.setCreatedAt(LocalDateTime.now());
 
         userRepository.save(user);
 
         observer.update(user);
 
-        return "User registered successfully";
+        return new AuthResponse(true, "User registered successfully", user.getName(), user.getEmail());
     }
 
-    public String login(LoginRequest request){
+    public AuthResponse login(LoginRequest request){
         LoginStrategy strategy = new EmailLoginStrategy(userRepository, encoder);
-        return strategy.login(request);
+        User user = strategy.login(request);
+        return new AuthResponse(true, "Login successful", user.getName(), user.getEmail());
     }
 }

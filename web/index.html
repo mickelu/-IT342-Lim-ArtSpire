@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtSpire Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero-panel">
+            <p class="eyebrow">ArtSpire Web Portal</p>
+            <h1>Create and access your account.</h1>
+            <p class="hero-copy">
+                This web client connects directly to the Spring Boot backend and stores user accounts in the database.
+                Register, sign in, and verify the core authentication flow of the system.
+            </p>
+
+            <div class="status-card">
+                <p class="status-label">Backend API</p>
+                <div class="api-config">
+                    <label for="apiBaseUrl">Base URL</label>
+                    <input id="apiBaseUrl" type="url" value="http://localhost:8081" />
+                </div>
+                <p class="status-hint">Use the same host and port where the backend is running.</p>
+            </div>
+        </section>
+
+        <section class="app-panel">
+            <div class="tabs" role="tablist" aria-label="Authentication forms">
+                <button class="tab is-active" data-tab-target="loginPanel" type="button">Login</button>
+                <button class="tab" data-tab-target="registerPanel" type="button">Register</button>
+            </div>
+
+            <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+
+            <section id="loginPanel" class="tab-panel is-active">
+                <h2>Welcome back</h2>
+                <p class="panel-copy">Log in using the account stored in your database.</p>
+                <form id="loginForm" novalidate>
+                    <label for="loginEmail">Email</label>
+                    <input id="loginEmail" name="email" type="email" placeholder="you@example.com" required>
+
+                    <label for="loginPassword">Password</label>
+                    <input id="loginPassword" name="password" type="password" placeholder="Minimum 8 characters" required>
+
+                    <button class="primary-button" type="submit">Log In</button>
+                </form>
+            </section>
+
+            <section id="registerPanel" class="tab-panel hidden">
+                <h2>Create account</h2>
+                <p class="panel-copy">Register a new user and save the record to the backend database.</p>
+                <form id="registerForm" novalidate>
+                    <label for="registerName">Full name</label>
+                    <input id="registerName" name="name" type="text" placeholder="Juan Dela Cruz" required>
+
+                    <label for="registerEmail">Email</label>
+                    <input id="registerEmail" name="email" type="email" placeholder="you@example.com" required>
+
+                    <label for="registerPassword">Password</label>
+                    <input id="registerPassword" name="password" type="password" placeholder="Minimum 8 characters" required>
+
+                    <button class="primary-button" type="submit">Create Account</button>
+                </form>
+            </section>
+
+            <section id="dashboardPanel" class="dashboard hidden">
+                <div class="dashboard-header">
+                    <div>
+                        <p class="eyebrow">Authenticated Session</p>
+                        <h2 id="welcomeTitle">Welcome</h2>
+                    </div>
+                    <button id="logoutButton" class="secondary-button" type="button">Log Out</button>
+                </div>
+
+                <div class="dashboard-grid">
+                    <article class="dashboard-card">
+                        <p class="card-label">Name</p>
+                        <h3 id="profileName">-</h3>
+                    </article>
+                    <article class="dashboard-card">
+                        <p class="card-label">Email</p>
+                        <h3 id="profileEmail">-</h3>
+                    </article>
+                    <article class="dashboard-card">
+                        <p class="card-label">Feature Status</p>
+                        <h3>Connected</h3>
+                        <p class="card-copy">Frontend, backend, and database integration is working.</p>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>

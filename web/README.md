@@ -1,12 +1,18 @@
 # ArtSpire Web
 
-Static web frontend for the ArtSpire authentication flow.
+React frontend for the ArtSpire authentication flow.
 
 ## Run
 
 1. Start the backend in `backend/` on `http://localhost:8081`.
-2. Serve this folder with any static server.
-3. Open `index.html` through that server and use the login or register form.
+2. In `web/`, run `npm install`.
+3. Start the client with `npm run dev`.
+
+## Routes
+
+- `/login`
+- `/register`
+- `/dashboard`
 
 ## Main Feature
 

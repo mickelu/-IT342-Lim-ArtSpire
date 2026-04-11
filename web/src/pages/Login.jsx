@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthLayout from "../components/AuthLayout";
-import { postJson } from "../lib/api";
+import { postJson } from "../supabaseClient";
 import { setStoredUser } from "../lib/storage";
 
-export default function RegisterPage() {
+export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({ email: "", password: "" });
   const [feedback, setFeedback] = useState(
     location.state?.message ? { type: "success", message: location.state.message } : null
   );
@@ -26,9 +26,9 @@ export default function RegisterPage() {
     setFeedback(null);
 
     try {
-      const data = await postJson("/api/auth/register", form);
+      const data = await postJson("/api/auth/login", form);
       setStoredUser({
-        name: data.name || form.name,
+        name: data.name || "User",
         email: data.email || form.email
       });
       navigate("/dashboard", {
@@ -45,30 +45,18 @@ export default function RegisterPage() {
   return (
     <AuthLayout
       feedback={feedback}
-      title="Create an account for ArtSpire."
-      subtitle="Register a new user, store the record in the database, and continue directly to the dashboard after success."
+      title="Access your creative workspace."
+      subtitle="Sign in using your registered account to verify the web app is connected to the backend and database."
     >
-      <h2>Create account</h2>
-      <p className="panel-copy">Register a new user and save the record to the backend database.</p>
+      <h2>Welcome back</h2>
+      <p className="panel-copy">Log in using the account stored in your database.</p>
 
       <form onSubmit={handleSubmit} noValidate>
-        <label className="field-label" htmlFor="registerName">
-          Full name
-        </label>
-        <input
-          id="registerName"
-          name="name"
-          type="text"
-          placeholder="Juan Dela Cruz"
-          value={form.name}
-          onChange={(event) => setForm({ ...form, name: event.target.value })}
-        />
-
-        <label className="field-label" htmlFor="registerEmail">
+        <label className="field-label" htmlFor="loginEmail">
           Email
         </label>
         <input
-          id="registerEmail"
+          id="loginEmail"
           name="email"
           type="email"
           placeholder="you@example.com"
@@ -76,11 +64,11 @@ export default function RegisterPage() {
           onChange={(event) => setForm({ ...form, email: event.target.value })}
         />
 
-        <label className="field-label" htmlFor="registerPassword">
+        <label className="field-label" htmlFor="loginPassword">
           Password
         </label>
         <input
-          id="registerPassword"
+          id="loginPassword"
           name="password"
           type="password"
           placeholder="Minimum 8 characters"
@@ -89,32 +77,24 @@ export default function RegisterPage() {
         />
 
         <button className="primary-button" type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Creating account..." : "Create Account"}
+          {isSubmitting ? "Logging in..." : "Log In"}
         </button>
       </form>
 
       <p className="inline-link">
-        Already registered? <Link to="/login">Go to login.</Link>
+        No account yet? <Link to="/register">Create one here.</Link>
       </p>
     </AuthLayout>
   );
 }
 
 function validate(form) {
-  if (!form.name.trim() || !form.email.trim() || !form.password) {
-    return "Name, email, and password are required.";
-  }
-
-  if (form.name.trim().length < 2) {
-    return "Name must be at least 2 characters.";
+  if (!form.email.trim() || !form.password) {
+    return "Email and password are required.";
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
     return "Enter a valid email address.";
-  }
-
-  if (form.password.length < 8) {
-    return "Password must be at least 8 characters.";
   }
 
   return "";

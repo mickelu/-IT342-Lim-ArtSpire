@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { clearStoredUser, getStoredUser } from "../lib/storage";
 
-export default function DashboardPage() {
+export default function Dashboard() {
   const navigate = useNavigate();
   const location = useLocation();
   const user = getStoredUser();

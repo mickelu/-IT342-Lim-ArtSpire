@@ -1,5 +1,6 @@
 package edu.cit.lim.artspire.facade;
 
+import edu.cit.lim.artspire.dto.AuthResponse;
 import edu.cit.lim.artspire.dto.LoginRequest;
 import edu.cit.lim.artspire.dto.RegisterRequest;
 import edu.cit.lim.artspire.service.AuthService;
@@ -13,11 +14,11 @@ public class AuthFacade {
     @Autowired
     private AuthService authService;
 
-    public String register(RegisterRequest request){
+    public AuthResponse register(RegisterRequest request){
         return authService.register(request);
     }
 
-    public String login(LoginRequest request){
+    public AuthResponse login(LoginRequest request){
         return authService.login(request);
     }
 }

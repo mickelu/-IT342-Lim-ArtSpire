@@ -1,15 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import Upload from "./pages/Upload";
-import Gallery from "./pages/Gallery";
-import { getStoredUser } from "./lib/storage";
-
-function ProtectedRoute({ children }) {
-  const user = getStoredUser();
-  return user ? children : <Navigate to="/login" replace />;
-}
+import ProtectedRoute from "./features/auth/components/ProtectedRoute";
+import Login from "./features/auth/pages/Login";
+import Register from "./features/auth/pages/Register";
+import Dashboard from "./features/dashboard/pages/Dashboard";
+import { getStoredUser } from "./shared/lib/storage";
 
 export default function App() {
   return (
@@ -20,13 +14,11 @@ export default function App() {
       <Route
         path="/dashboard"
         element={
-          <ProtectedRoute>
+          <ProtectedRoute getUser={getStoredUser}>
             <Dashboard />
           </ProtectedRoute>
         }
       />
-      <Route path="/upload" element={<Upload />} />
-      <Route path="/gallery" element={<Gallery />} />
     </Routes>
   );
 }

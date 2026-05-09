@@ -1,4 +1,4 @@
-package edu.cit.lim.artspire.config;
+package edu.cit.lim.artspire.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

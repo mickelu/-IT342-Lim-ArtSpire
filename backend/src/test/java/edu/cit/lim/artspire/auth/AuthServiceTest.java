@@ -19,7 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
@@ -72,10 +72,12 @@ class AuthServiceTest {
         when(userRepository.findByEmail(request.getEmail()))
                 .thenReturn(Optional.of(TestData.user("encoded")));
 
-        assertThatThrownBy(() -> authService.register(request))
-                .isInstanceOf(ResponseStatusException.class)
-                .extracting("statusCode", "reason")
-                .containsExactly(BAD_REQUEST, "Email already exists");
+        assertThatExceptionOfType(ResponseStatusException.class)
+                .isThrownBy(() -> authService.register(request))
+                .satisfies(exception -> {
+                    assertThat(exception.getStatusCode()).isEqualTo(BAD_REQUEST);
+                    assertThat(exception.getReason()).isEqualTo("Email already exists");
+                });
 
         verify(userRepository, never()).save(any(User.class));
     }
@@ -99,10 +101,12 @@ class AuthServiceTest {
         LoginRequest request = TestData.validLoginRequest();
         when(userRepository.findByEmail(request.getEmail())).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> authService.login(request))
-                .isInstanceOf(ResponseStatusException.class)
-                .extracting("statusCode", "reason")
-                .containsExactly(UNAUTHORIZED, "Invalid credentials");
+        assertThatExceptionOfType(ResponseStatusException.class)
+                .isThrownBy(() -> authService.login(request))
+                .satisfies(exception -> {
+                    assertThat(exception.getStatusCode()).isEqualTo(UNAUTHORIZED);
+                    assertThat(exception.getReason()).isEqualTo("Invalid credentials");
+                });
     }
 
     @Test
@@ -111,9 +115,11 @@ class AuthServiceTest {
         User user = TestData.user(encoder.encode("different-password"));
         when(userRepository.findByEmail(request.getEmail())).thenReturn(Optional.of(user));
 
-        assertThatThrownBy(() -> authService.login(request))
-                .isInstanceOf(ResponseStatusException.class)
-                .extracting("statusCode", "reason")
-                .containsExactly(UNAUTHORIZED, "Invalid credentials");
+        assertThatExceptionOfType(ResponseStatusException.class)
+                .isThrownBy(() -> authService.login(request))
+                .satisfies(exception -> {
+                    assertThat(exception.getStatusCode()).isEqualTo(UNAUTHORIZED);
+                    assertThat(exception.getReason()).isEqualTo("Invalid credentials");
+                });
     }
 }

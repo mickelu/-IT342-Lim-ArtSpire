@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.HttpStatus.UNAUTHORIZED;
@@ -38,10 +38,12 @@ class EmailLoginStrategyTest {
         LoginRequest request = TestData.validLoginRequest();
         when(userRepository.findByEmail(request.getEmail())).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> strategy.login(request))
-                .isInstanceOf(ResponseStatusException.class)
-                .extracting("statusCode", "reason")
-                .containsExactly(UNAUTHORIZED, "Invalid credentials");
+        assertThatExceptionOfType(ResponseStatusException.class)
+                .isThrownBy(() -> strategy.login(request))
+                .satisfies(exception -> {
+                    assertThat(exception.getStatusCode()).isEqualTo(UNAUTHORIZED);
+                    assertThat(exception.getReason()).isEqualTo("Invalid credentials");
+                });
     }
 
     @Test
@@ -50,9 +52,11 @@ class EmailLoginStrategyTest {
         User user = TestData.user(encoder.encode("not-the-password"));
         when(userRepository.findByEmail(request.getEmail())).thenReturn(Optional.of(user));
 
-        assertThatThrownBy(() -> strategy.login(request))
-                .isInstanceOf(ResponseStatusException.class)
-                .extracting("statusCode", "reason")
-                .containsExactly(UNAUTHORIZED, "Invalid credentials");
+        assertThatExceptionOfType(ResponseStatusException.class)
+                .isThrownBy(() -> strategy.login(request))
+                .satisfies(exception -> {
+                    assertThat(exception.getStatusCode()).isEqualTo(UNAUTHORIZED);
+                    assertThat(exception.getReason()).isEqualTo("Invalid credentials");
+                });
     }
 }

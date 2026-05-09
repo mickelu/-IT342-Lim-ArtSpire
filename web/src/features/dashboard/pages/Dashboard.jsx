@@ -15,6 +15,14 @@ export default function Dashboard() {
     });
   }
 
+  function handleGoToGallery() {
+    navigate("/gallery");
+  }
+
+  function handleGoToUpload() {
+    navigate("/upload");
+  }
+
   return (
     <main className="dashboard-shell">
       <section className="dashboard-panel">
@@ -49,6 +57,30 @@ export default function Dashboard() {
               Registration and login requests are saved and validated through the Spring Boot backend.
             </p>
           </article>
+        </div>
+
+        {/* New Artwork Actions Section */}
+        <div className="artwork-actions-section">
+          <h2 className="section-title">Artwork Gallery</h2>
+          <div className="action-buttons">
+            <button
+              className="primary-button"
+              type="button"
+              onClick={handleGoToUpload}
+            >
+              📤 Upload Artwork
+            </button>
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={handleGoToGallery}
+            >
+              🖼️ View Gallery
+            </button>
+          </div>
+          <p className="section-copy">
+            Share your artistic creations or explore the artwork collection.
+          </p>
         </div>
       </section>
     </main>

@@ -5,81 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed489817-2fba-41d1-9a57-ab8b0894993c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/security/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/adapter/UserAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/controller/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/dto/AuthResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/dto/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/dto/RegisterRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/facade/AuthFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/factory/UserFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/observer/NotificationObserver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/observer/UserObserver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/service/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/service/SupabaseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/strategy/EmailLoginStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/strategy/LoginStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/edu/cit/lim/artspire/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/edu/cit/lim/artspire/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/AuthLayout.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/lib/storage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/Dashboard.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/Login.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/Register.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/supabaseClient.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/auth/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cit/lim/artspire/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/edu/cit/lim/artspire/auth/AuthServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/edu/cit/lim/artspire/auth/AuthServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/edu/cit/lim/artspire/auth/strategy/EmailLoginStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/edu/cit/lim/artspire/auth/strategy/EmailLoginStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/features/dashboard/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/features/dashboard/pages/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="138" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3,
-  &quot;fromUser&quot;: false
-}</component>
   <component name="ProjectId" id="3AbkxZ52pUFxK0Q9YR5rD9p4Z9Y" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.App.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus VivoBook/-IT342-Lim-ArtSpire&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging refactor/vertical-slice-architecture",
+    "last_opened_file_path": "D:/IT342-Lim-ArtSpire",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -88,17 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772868906635</updated>
-      <workItem from="1775464574665" duration="147000" />
-      <workItem from="1775464746380" duration="3561000" />
-      <workItem from="1775884506905" duration="3793000" />
-      <workItem from="1776497834170" duration="2242000" />
-      <workItem from="1777436771818" duration="180000" />
-      <workItem from="1777617286280" duration="689000" />
-      <workItem from="1778310051215" duration="2374000" />
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>

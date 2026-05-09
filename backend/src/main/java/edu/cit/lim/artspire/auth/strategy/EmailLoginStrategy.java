@@ -1,8 +1,8 @@
-package edu.cit.lim.artspire.strategy;
+package edu.cit.lim.artspire.auth.strategy;
 
-import edu.cit.lim.artspire.dto.LoginRequest;
-import edu.cit.lim.artspire.model.User;
-import edu.cit.lim.artspire.repository.UserRepository;
+import edu.cit.lim.artspire.auth.dto.LoginRequest;
+import edu.cit.lim.artspire.user.User;
+import edu.cit.lim.artspire.user.UserRepository;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.server.ResponseStatusException;

@@ -1,9 +1,8 @@
-package edu.cit.lim.artspire.facade;
+package edu.cit.lim.artspire.auth;
 
-import edu.cit.lim.artspire.dto.AuthResponse;
-import edu.cit.lim.artspire.dto.LoginRequest;
-import edu.cit.lim.artspire.dto.RegisterRequest;
-import edu.cit.lim.artspire.service.AuthService;
+import edu.cit.lim.artspire.auth.dto.AuthResponse;
+import edu.cit.lim.artspire.auth.dto.LoginRequest;
+import edu.cit.lim.artspire.auth.dto.RegisterRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

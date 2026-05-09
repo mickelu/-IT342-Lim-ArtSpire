@@ -1,6 +1,6 @@
-package edu.cit.lim.artspire.observer;
+package edu.cit.lim.artspire.auth;
 
-import edu.cit.lim.artspire.model.User;
+import edu.cit.lim.artspire.user.User;
 
 public class NotificationObserver implements UserObserver {
 

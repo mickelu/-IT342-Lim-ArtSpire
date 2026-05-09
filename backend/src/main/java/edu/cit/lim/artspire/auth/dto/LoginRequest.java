@@ -1,4 +1,4 @@
-package edu.cit.lim.artspire.dto;
+package edu.cit.lim.artspire.auth.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

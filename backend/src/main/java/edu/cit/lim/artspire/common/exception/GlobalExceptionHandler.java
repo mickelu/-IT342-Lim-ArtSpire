@@ -1,4 +1,4 @@
-package edu.cit.lim.artspire.exception;
+package edu.cit.lim.artspire.common.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

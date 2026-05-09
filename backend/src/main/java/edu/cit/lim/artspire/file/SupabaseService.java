@@ -1,4 +1,4 @@
-package edu.cit.lim.artspire.service;
+package edu.cit.lim.artspire.file;
 
 import edu.cit.lim.artspire.config.SupabaseConfig;
 import org.springframework.http.HttpEntity;

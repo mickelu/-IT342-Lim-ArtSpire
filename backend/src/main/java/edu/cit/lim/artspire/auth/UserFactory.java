@@ -1,6 +1,6 @@
-package edu.cit.lim.artspire.factory;
+package edu.cit.lim.artspire.auth;
 
-import edu.cit.lim.artspire.model.User;
+import edu.cit.lim.artspire.user.User;
 import java.time.LocalDateTime;
 
 public class UserFactory {

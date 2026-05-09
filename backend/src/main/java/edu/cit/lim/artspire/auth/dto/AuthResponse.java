@@ -1,4 +1,4 @@
-package edu.cit.lim.artspire.dto;
+package edu.cit.lim.artspire.auth.dto;
 
 public class AuthResponse {
 

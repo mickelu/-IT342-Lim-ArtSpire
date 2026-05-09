@@ -1,7 +1,6 @@
-package edu.cit.lim.artspire.adapter;
+package edu.cit.lim.artspire.user;
 
-import edu.cit.lim.artspire.model.User;
-import edu.cit.lim.artspire.dto.RegisterRequest;
+import edu.cit.lim.artspire.auth.dto.RegisterRequest;
 
 public class UserAdapter {
 

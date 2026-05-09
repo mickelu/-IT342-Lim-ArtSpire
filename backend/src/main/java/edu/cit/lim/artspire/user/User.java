@@ -1,4 +1,4 @@
-package edu.cit.lim.artspire.model;
+package edu.cit.lim.artspire.user;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

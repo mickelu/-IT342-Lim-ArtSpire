@@ -1,15 +1,12 @@
-package edu.cit.lim.artspire.service;
+package edu.cit.lim.artspire.auth;
 
-import edu.cit.lim.artspire.dto.AuthResponse;
-import edu.cit.lim.artspire.dto.LoginRequest;
-import edu.cit.lim.artspire.dto.RegisterRequest;
-import edu.cit.lim.artspire.factory.UserFactory;
-import edu.cit.lim.artspire.model.User;
-import edu.cit.lim.artspire.repository.UserRepository;
-import edu.cit.lim.artspire.strategy.LoginStrategy;
-import edu.cit.lim.artspire.strategy.EmailLoginStrategy;
-import edu.cit.lim.artspire.observer.UserObserver;
-import edu.cit.lim.artspire.observer.NotificationObserver;
+import edu.cit.lim.artspire.auth.dto.AuthResponse;
+import edu.cit.lim.artspire.auth.dto.LoginRequest;
+import edu.cit.lim.artspire.auth.dto.RegisterRequest;
+import edu.cit.lim.artspire.auth.strategy.EmailLoginStrategy;
+import edu.cit.lim.artspire.auth.strategy.LoginStrategy;
+import edu.cit.lim.artspire.user.User;
+import edu.cit.lim.artspire.user.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,7 +16,6 @@ import org.springframework.web.server.ResponseStatusException;
 import java.time.LocalDateTime;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 @Service
 public class AuthService {

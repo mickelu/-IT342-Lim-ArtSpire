@@ -1,9 +1,8 @@
-package edu.cit.lim.artspire.controller;
+package edu.cit.lim.artspire.auth;
 
-import edu.cit.lim.artspire.dto.AuthResponse;
-import edu.cit.lim.artspire.dto.LoginRequest;
-import edu.cit.lim.artspire.dto.RegisterRequest;
-import edu.cit.lim.artspire.facade.AuthFacade;
+import edu.cit.lim.artspire.auth.dto.AuthResponse;
+import edu.cit.lim.artspire.auth.dto.LoginRequest;
+import edu.cit.lim.artspire.auth.dto.RegisterRequest;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.*;

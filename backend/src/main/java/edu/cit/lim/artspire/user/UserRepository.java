@@ -1,6 +1,5 @@
-package edu.cit.lim.artspire.repository;
+package edu.cit.lim.artspire.user;
 
-import edu.cit.lim.artspire.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 

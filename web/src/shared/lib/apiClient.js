@@ -1,4 +1,4 @@
-import { getApiBaseUrl } from "./lib/storage";
+import { getApiBaseUrl } from "./storage";
 
 export async function postJson(path, payload) {
   const response = await fetch(`${getApiBaseUrl()}${path}`, {

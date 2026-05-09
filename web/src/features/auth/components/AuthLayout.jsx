@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { getApiBaseUrl, setApiBaseUrl } from "../lib/storage";
+import FeedbackMessage from "../../../shared/components/FeedbackMessage";
+import { getApiBaseUrl, setApiBaseUrl } from "../../../shared/lib/storage";
 
 export default function AuthLayout({ title, subtitle, children, feedback }) {
   const location = useLocation();
@@ -39,11 +40,7 @@ export default function AuthLayout({ title, subtitle, children, feedback }) {
           </Link>
         </div>
 
-        {feedback ? (
-          <div className={`feedback ${feedback.type}`} role="status" aria-live="polite">
-            {feedback.message}
-          </div>
-        ) : null}
+        <FeedbackMessage feedback={feedback} aria-live="polite" />
 
         <section className="tab-panel">{children}</section>
       </section>

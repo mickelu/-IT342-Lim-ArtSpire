@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { clearStoredUser, getStoredUser } from "../lib/storage";
+import FeedbackMessage from "../../../shared/components/FeedbackMessage";
+import { clearStoredUser, getStoredUser } from "../../../shared/lib/storage";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -30,11 +31,7 @@ export default function Dashboard() {
           </button>
         </div>
 
-        {location.state?.message ? (
-          <div className="feedback success" role="status">
-            {location.state.message}
-          </div>
-        ) : null}
+        <FeedbackMessage feedback={{ type: "success", message: location.state?.message }} />
 
         <div className="dashboard-grid">
           <article className="dashboard-card">
